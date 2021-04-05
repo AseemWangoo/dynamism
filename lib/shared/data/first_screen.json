@@ -1,0 +1,24 @@
+{
+    "items": [{
+            "id": "id1",
+            "header": "1",
+            "title": "Lorem Ipsum",
+            "subtitle": "Dui mattis risus elit purus feugiat quis in sit.",
+            "image_url": "https://via.placeholder.com/300.png"
+        },
+        {
+            "id": "id2",
+            "header": "2",
+            "title": "Lorem Ipsum2",
+            "subtitle": "Dui mattis risus elit purus feugiat quis in sit.",
+            "image_url": "https://via.placeholder.com/300.png"
+        },
+        {
+            "id": "id3",
+            "header": "3",
+            "title": "Lorem Ipsum3",
+            "subtitle": "Dui mattis risus elit purus feugiat quis in sit.",
+            "image_url": "https://via.placeholder.com/300.png"
+        }
+    ]
+}
