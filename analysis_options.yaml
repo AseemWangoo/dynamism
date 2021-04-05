@@ -3,9 +3,10 @@ include: package:lint/analysis_options.yaml
 analyzer:
   strong-mode:
     implicit-casts: false
-    implicit-dynamic: false
+    # implicit-dynamic: false
   exclude:
-    - lib/shared/gRPC/generated/**
+    - lib/home/models/carousel.model.dart
+    - lib/fringilla/model/fringilla.model.dart
   errors:
     missing_required_param: error
     parameter_assignments: error

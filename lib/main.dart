@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:screener/fringilla/view_models/fringilla.viewmodel.dart';
+import 'package:screener/pellen/view_models/pellen.viewmodel.dart';
+import 'package:screener/shared/styles/theme.dart';
 
 import 'locator.dart';
 import 'shared/routes/routes.dart';
@@ -10,7 +14,17 @@ Future<void> main() async {
   // INIT SERVICE LOCATOR
   setupLocator();
 
-  runApp(MainApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: PellenViewModel()),
+        ChangeNotifierProvider(
+          create: (_) => FringillaViewModel(),
+        ),
+      ],
+      child: MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatefulWidget {
@@ -28,10 +42,7 @@ class _MainAppState extends State<MainApp> {
       navigatorKey: navigatorService.rootNavKey,
       title: 'Screener',
       onGenerateRoute: AppRoutes.generateRoute,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: AppTheme.theme,
     );
   }
 }
