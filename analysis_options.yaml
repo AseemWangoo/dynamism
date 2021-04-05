@@ -1,0 +1,19 @@
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+  exclude:
+    - lib/shared/gRPC/generated/**
+  errors:
+    missing_required_param: error
+    parameter_assignments: error
+    missing_return: error
+    # allow having TODOs in the code
+    todo: warning
+
+linter:
+  rules:
+    - camel_case_types
+    - flutter_style_todos
