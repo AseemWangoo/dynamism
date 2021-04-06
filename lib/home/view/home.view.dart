@@ -1,8 +1,19 @@
+import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'package:screener/home/components/carousel_card/carousel_card.component.dart';
 
 import 'package:screener/home/components/list/list.component.dart';
+import 'package:screener/home/models/carousel.model.dart';
 import 'package:screener/home/utils/strings.dart';
+import 'package:screener/home/view_models/home.viewmodel.dart';
 import 'package:screener/locator.dart';
+import 'package:screener/shared/assets/image.assets.dart';
+import 'package:screener/shared/components/image/image.component.dart';
+import 'package:screener/shared/components/loading/loading.component.dart';
+import 'package:screener/shared/components/notifier/notifier.component.dart';
 import 'package:screener/shared/components/scaffold/custom.scaffold.dart';
 import 'package:screener/shared/components/spacers/column_spacer.component.dart';
 import 'package:screener/shared/components/spacers/spacer.component.dart';
@@ -16,21 +27,42 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.only(top: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            SpacerVertical(20),
-            _Intro(),
-            SpacerVertical(32),
-            _Carousel(),
-            SpacerVertical(64),
-            _Bottom(),
-          ],
-        ),
-      ),
+    return NotifierWidget<HomeViewModel>(
+      builder: (_, model, child) {
+        if (model.isLoading) {
+          return child;
+        }
+
+        return CustomScaffold(
+          enableGutter: false,
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.only(top: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                SpacerVertical(20),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  child: _Intro(),
+                ),
+                SpacerVertical(32),
+                Padding(
+                  padding: EdgeInsets.only(left: 24),
+                  child: _Carousel(),
+                ),
+                SpacerVertical(64),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  child: _Bottom(),
+                ),
+                SpacerVertical(32),
+              ],
+            ),
+          ),
+        );
+      },
+      model: locator<HomeViewModel>(),
+      child: LoadingComponent(),
     );
   }
 }
@@ -69,7 +101,10 @@ class _Intro extends StatelessWidget {
           ],
         ),
         const SpacerVertical(24),
-        const Placeholder(),
+        ImageComponent(
+          assetName: ImageAssets.img300.assetName,
+          height: 300,
+        ),
       ],
     );
   }
@@ -80,6 +115,8 @@ class _Carousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final model = context.watch<HomeViewModel>().homeModel;
+
     return ColumnSpacer(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacerWidget: const SpacerVertical(56),
@@ -92,9 +129,52 @@ class _Carousel extends StatelessWidget {
             Text('Todo')
           ],
         ),
-        const Placeholder(),
+        CarouselSlider(
+          options: CarouselOptions(
+            aspectRatio: 1,
+            enableInfiniteScroll: false,
+            height: 588,
+            viewportFraction: 0.99,
+          ),
+          items: items(model),
+        ),
       ],
     );
+  }
+
+  List<Widget> items(CarouselModel model) {
+    final list = <Widget>[];
+
+    for (var i = 0; i < model.items.length; i++) {
+      final item = model.items[i];
+
+      if (i == model.items.length - 1) {
+        list.add(
+          CarouselCardComponent(
+            imageUrl: item.imageUrl,
+            text: item.header,
+            optionTitle: item.title,
+            optionSubtitle: item.subtitle,
+            optionDesc: item.desc,
+          ),
+        );
+      } else {
+        list.add(
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: CarouselCardComponent(
+              imageUrl: item.imageUrl,
+              text: item.header,
+              optionTitle: item.title,
+              optionSubtitle: item.subtitle,
+              optionDesc: item.desc,
+            ),
+          ),
+        );
+      }
+    }
+
+    return list;
   }
 }
 

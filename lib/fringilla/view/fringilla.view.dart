@@ -33,17 +33,17 @@ class FringillaView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                H3TextComponent(
+                const H3TextComponent(
                   text: FringillaStrings.title,
                 ),
-                SpacerVertical(20),
+                const SpacerVertical(20),
                 Text(
                   FringillaStrings.subtitle,
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
-                SpacerVertical(40),
-                _Items(),
-                SpacerVertical(20),
+                const SpacerVertical(40),
+                const _Items(),
+                const SpacerVertical(20),
                 ButtonComponent(
                   onPressed: () {},
                 ),

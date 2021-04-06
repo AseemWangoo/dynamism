@@ -5,8 +5,8 @@ analyzer:
     implicit-casts: false
     # implicit-dynamic: false
   exclude:
-    - lib/home/models/carousel.model.dart
-    - lib/fringilla/model/fringilla.model.dart
+    - lib/home/models/*.model.dart
+    - lib/fringilla/model/*.model.dart
   errors:
     missing_required_param: error
     parameter_assignments: error

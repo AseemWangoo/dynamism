@@ -11,12 +11,14 @@ class TextStyles {
   static TextStyle get bodyRegular => _bodyRegular;
   static TextStyle get bodyBold => _bodyBold;
   static TextStyle get caption => _caption;
+  static TextStyle get display => _display;
 
   static const TextStyle _headline1 = TextStyle(
     fontFamily: Fonts.roboto,
     fontWeight: FontWeight.w700,
     fontSize: 34,
     color: Colors.white,
+    height: 36 / 34,
   );
 
   static const TextStyle _headline2 = TextStyle(
@@ -24,6 +26,7 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     fontSize: 28,
     color: Colors.white,
+    height: 30 / 28,
   );
 
   static const TextStyle _headline3 = TextStyle(
@@ -31,6 +34,7 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     fontSize: 24,
     color: Colors.white,
+    height: 26 / 24,
   );
 
   static const TextStyle _headline4 = TextStyle(
@@ -38,6 +42,7 @@ class TextStyles {
     fontWeight: FontWeight.w300,
     fontSize: 20,
     color: Colors.white,
+    height: 23 / 20,
   );
 
   static const TextStyle _subtitle = TextStyle(
@@ -45,6 +50,7 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     fontSize: 14,
     color: Colors.white,
+    height: 14 / 14,
   );
 
   static const TextStyle _bodyRegular = TextStyle(
@@ -52,6 +58,7 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 14,
     color: Colors.white,
+    height: 18 / 14,
   );
 
   static final TextStyle _bodyBold = _bodyRegular.copyWith(
@@ -64,6 +71,15 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     fontSize: 13,
     color: Colors.white,
+    height: 14 / 13,
+  );
+
+  static const TextStyle _display = TextStyle(
+    fontFamily: Fonts.roboto,
+    fontWeight: FontWeight.w300,
+    fontSize: 56,
+    color: Colors.white,
+    height: 48 / 56,
   );
 }
 

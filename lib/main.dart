@@ -4,6 +4,7 @@ import 'package:screener/fringilla/view_models/fringilla.viewmodel.dart';
 import 'package:screener/pellen/view_models/pellen.viewmodel.dart';
 import 'package:screener/shared/styles/theme.dart';
 
+import 'home/view_models/home.viewmodel.dart';
 import 'locator.dart';
 import 'shared/routes/routes.dart';
 import 'shared/services/navigation.service.dart';
@@ -14,13 +15,16 @@ Future<void> main() async {
   // INIT SERVICE LOCATOR
   setupLocator();
 
+  // CALL INIT APIS
+  final homeViewModel = locator<HomeViewModel>();
+  await homeViewModel.fetchData();
+
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => homeViewModel),
         ChangeNotifierProvider.value(value: PellenViewModel()),
-        ChangeNotifierProvider(
-          create: (_) => FringillaViewModel(),
-        ),
+        ChangeNotifierProvider(create: (_) => FringillaViewModel()),
       ],
       child: MainApp(),
     ),

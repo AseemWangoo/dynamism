@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/services.dart' show rootBundle;
+
 import 'package:screener/fringilla/model/fringilla.model.dart';
 
 import 'package:screener/shared/view_models/loading.viewmodel.dart';
@@ -18,6 +19,8 @@ class FringillaViewModel extends LoadingViewModel {
     try {
       isLoading = true;
 
+      // await Future.delayed(const Duration(milliseconds: 800));
+
       final resp = await rootBundle.loadString('assets/data/third_screen.json');
       model = fringillaModelFromJson(resp);
     } catch (exc) {
@@ -30,5 +33,5 @@ class FringillaViewModel extends LoadingViewModel {
 
   // INTERNALS
 
-  FringillaModel _model;
+  FringillaModel _model = FringillaModel();
 }

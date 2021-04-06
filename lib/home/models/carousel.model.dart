@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 CarouselModel carouselModelFromJson(String str) =>
-    CarouselModel.fromJson(json.decode(str) as Map<String, dynamic>);
+    CarouselModel.fromJson(json.decode(str));
 
 String carouselModelToJson(CarouselModel data) => json.encode(data.toJson());
 
@@ -16,8 +16,8 @@ class CarouselModel {
         items: List<Item>.from(json["items"].map((x) => Item.fromJson(x))),
       );
 
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        "items": List<dynamic>.from(items.map<dynamic>((x) => x.toJson())),
+  Map<String, dynamic> toJson() => {
+        "items": List<dynamic>.from(items.map((x) => x.toJson())),
       };
 }
 
@@ -27,6 +27,7 @@ class Item {
     this.header,
     this.title,
     this.subtitle,
+    this.desc,
     this.imageUrl,
   });
 
@@ -34,21 +35,24 @@ class Item {
   String header;
   String title;
   String subtitle;
+  String desc;
   String imageUrl;
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
-        id: json["id"] as String,
-        header: json["header"] as String,
-        title: json["title"] as String,
-        subtitle: json["subtitle"] as String,
-        imageUrl: json["image_url"] as String,
+        id: json["id"],
+        header: json["header"],
+        title: json["title"],
+        subtitle: json["subtitle"],
+        desc: json["desc"],
+        imageUrl: json["image_url"],
       );
 
-  Map<String, dynamic> toJson() => <String, dynamic>{
+  Map<String, dynamic> toJson() => {
         "id": id,
         "header": header,
         "title": title,
         "subtitle": subtitle,
+        "desc": desc,
         "image_url": imageUrl,
       };
 }

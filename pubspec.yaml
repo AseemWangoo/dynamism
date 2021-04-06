@@ -36,6 +36,12 @@ dependencies:
   # WEBVIEW
   webview_flutter: ^1.0.1
 
+  # CACHING
+  cached_network_image: ^2.2.0+1
+
+  # CAROUSEL SLIDER
+  carousel_slider: ^2.2.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -49,7 +55,9 @@ flutter:
   assets:
     - assets/data/
     - assets/images/
-  
+    - assets/images/2.0x/
+    - assets/images/3.0x/
+    
   fonts:
     - family: Roboto
       fonts:

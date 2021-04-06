@@ -15,4 +15,6 @@ class AppColors {
   static Color textGrey = HexColor.fromHex('#A0AEBB');
   static Color cardGrey = const Color.fromRGBO(126, 126, 126, 0.15);
   static Color buttonOutline = const Color.fromRGBO(0, 118, 206, 1);
+
+  static Color cardBorder = const Color.fromRGBO(113, 116, 123, 1);
 }

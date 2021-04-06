@@ -21,7 +21,7 @@ class ButtonComponent extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          side: BorderSide(color: AppColors.buttonOutline, width: 1),
+          side: BorderSide(color: AppColors.buttonOutline),
         ),
         child: Text(text),
       ),
