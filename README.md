@@ -64,9 +64,9 @@ home/view/xyz.view.dart
 ```
 
 - We have 3 views
-- 1. HomeView. Now home has 2 options (Egestas scleri) and (Consectur)
-- 2. On click of Egestas scleri, you see the PellenView
-- 3. On click of Consectur, you see the FringillaView
+1. HomeView. Now home has 2 options (Egestas scleri) and (Consectur)
+2. On click of Egestas scleri, you see the PellenView
+3. On click of Consectur, you see the FringillaView
 
 
 ### Templates

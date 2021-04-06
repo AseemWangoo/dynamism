@@ -33,7 +33,7 @@ class PellenView extends StatelessWidget {
             ),
             const SpacerVertical(28),
             const _SectionOne(),
-            const SpacerVertical(32),
+            const SpacerVertical(64),
             const _SectionTwo(),
             const SpacerVertical(32),
           ],
@@ -93,7 +93,8 @@ class _SectionTwo extends StatelessWidget {
 
     return Column(
       children: [
-        ImageComponent(assetName: model.bottomSection().first.url, height: 400),
+        ImageComponent(assetName: model.bottomSection().first.url),
+        const SpacerVertical(44),
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (_, int i) {

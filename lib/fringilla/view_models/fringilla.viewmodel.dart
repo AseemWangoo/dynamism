@@ -5,9 +5,15 @@ import 'package:screener/fringilla/model/fringilla.model.dart';
 
 import 'package:screener/shared/view_models/loading.viewmodel.dart';
 
-class FringillaViewModel extends LoadingViewModel {
+abstract class FringillaVM extends LoadingViewModel {
+  Future<void> fetchData();
+  FringillaModel get model;
+}
+
+class FringillaViewModel extends FringillaVM {
   FringillaViewModel();
 
+  @override
   FringillaModel get model => _model;
 
   set model(FringillaModel model) {
@@ -15,6 +21,7 @@ class FringillaViewModel extends LoadingViewModel {
     notifyListeners();
   }
 
+  @override
   Future<void> fetchData() async {
     try {
       isLoading = true;

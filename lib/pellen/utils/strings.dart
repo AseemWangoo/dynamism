@@ -15,6 +15,7 @@ class PellenStrings {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper amet viverra non justo a morbi blandit.';
 
   static const String btmPt4 = 'Lacinia nunc curabitur velit.';
-  static const String btmPt5 = 'Diam ac molestie.';
-  static const String btmPt6 = 'Volutpat id sed.';
+  static const String btmPt5 = 'Lacinia non.';
+  static const String btmPt6 = 'Diam ac molestie.';
+  static const String btmPt7 = 'Volutpat id sed.';
 }

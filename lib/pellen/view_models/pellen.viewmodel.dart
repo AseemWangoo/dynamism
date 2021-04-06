@@ -4,7 +4,13 @@ import 'package:screener/pellen/model/pellen.model.dart';
 import 'package:screener/pellen/utils/strings.dart';
 import 'package:screener/shared/assets/image.assets.dart';
 
-class PellenViewModel extends ChangeNotifier {
+abstract class PellenVM extends ChangeNotifier {
+  List<PellenModel> topSection();
+  List<PellenModel> bottomSection();
+}
+
+class PellenViewModel extends PellenVM {
+  @override
   List<PellenModel> topSection() {
     final list = <PellenModel>[
       PellenModel(
@@ -16,6 +22,7 @@ class PellenViewModel extends ChangeNotifier {
     return list;
   }
 
+  @override
   List<PellenModel> bottomSection() {
     final list = <PellenModel>[
       PellenModel(
@@ -25,9 +32,10 @@ class PellenViewModel extends ChangeNotifier {
           PellenStrings.btmPt3,
           PellenStrings.btmPt4,
           PellenStrings.btmPt5,
-          PellenStrings.btmPt6
+          PellenStrings.btmPt6,
+          PellenStrings.btmPt7,
         ],
-        ImageAssets.img400.assetName,
+        ImageAssets.img300.assetName,
       ),
     ];
 

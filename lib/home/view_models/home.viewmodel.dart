@@ -5,9 +5,15 @@ import 'package:screener/home/model/carousel.model.dart';
 
 import 'package:screener/shared/view_models/loading.viewmodel.dart';
 
-class HomeViewModel extends LoadingViewModel {
+abstract class HomeVM extends LoadingViewModel {
+  CarouselModel get homeModel;
+  Future<void> fetchData();
+}
+
+class HomeViewModel extends HomeVM {
   HomeViewModel();
 
+  @override
   CarouselModel get homeModel => _homeModel;
 
   set homeModel(CarouselModel homeModel) {
@@ -15,6 +21,7 @@ class HomeViewModel extends LoadingViewModel {
     notifyListeners();
   }
 
+  @override
   Future<void> fetchData() async {
     try {
       isLoading = true;
