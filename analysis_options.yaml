@@ -5,7 +5,7 @@ analyzer:
     implicit-casts: false
     # implicit-dynamic: false
   exclude:
-    - lib/home/models/*.model.dart
+    - lib/home/model/*.model.dart
     - lib/fringilla/model/*.model.dart
   errors:
     missing_required_param: error

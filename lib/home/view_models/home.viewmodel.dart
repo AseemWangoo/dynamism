@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter/services.dart' show rootBundle;
 
-import 'package:screener/home/models/carousel.model.dart';
+import 'package:screener/home/model/carousel.model.dart';
 
 import 'package:screener/shared/view_models/loading.viewmodel.dart';
 

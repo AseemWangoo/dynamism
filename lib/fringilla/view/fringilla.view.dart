@@ -47,6 +47,7 @@ class FringillaView extends StatelessWidget {
                 ButtonComponent(
                   onPressed: () {},
                 ),
+                const SpacerVertical(20),
               ],
             ),
           ),

@@ -14,10 +14,11 @@ class DotIndicatorComponent extends StatelessWidget {
     return Container(
       width: 8.0,
       height: 8.0,
-      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: isSelected ? AppColors.primaryBlue : AppColors.pressedBlue,
+        border: Border.all(color: AppColors.cardBorder),
+        color: isSelected ? AppColors.primaryBlue : Colors.transparent,
       ),
     );
   }

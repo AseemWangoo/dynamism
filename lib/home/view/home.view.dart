@@ -1,12 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
-
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import 'package:screener/home/components/carousel_card/carousel_card.component.dart';
 
 import 'package:screener/home/components/list/list.component.dart';
-import 'package:screener/home/models/carousel.model.dart';
+import 'package:screener/home/templates/carousel/carousel.template.dart';
 import 'package:screener/home/utils/strings.dart';
 import 'package:screener/home/view_models/home.viewmodel.dart';
 import 'package:screener/locator.dart';
@@ -48,7 +43,7 @@ class HomeView extends StatelessWidget {
                 SpacerVertical(32),
                 Padding(
                   padding: EdgeInsets.only(left: 24),
-                  child: _Carousel(),
+                  child: CarouselTemplate(),
                 ),
                 SpacerVertical(64),
                 Padding(
@@ -107,74 +102,6 @@ class _Intro extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class _Carousel extends StatelessWidget {
-  const _Carousel({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final model = context.watch<HomeViewModel>().homeModel;
-
-    return ColumnSpacer(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacerWidget: const SpacerVertical(56),
-      children: [
-        Row(
-          children: const [
-            H3TextComponent(
-              text: HomeStrings.crslTitle,
-            ),
-            Text('Todo')
-          ],
-        ),
-        CarouselSlider(
-          options: CarouselOptions(
-            aspectRatio: 1,
-            enableInfiniteScroll: false,
-            height: 588,
-            viewportFraction: 0.99,
-          ),
-          items: items(model),
-        ),
-      ],
-    );
-  }
-
-  List<Widget> items(CarouselModel model) {
-    final list = <Widget>[];
-
-    for (var i = 0; i < model.items.length; i++) {
-      final item = model.items[i];
-
-      if (i == model.items.length - 1) {
-        list.add(
-          CarouselCardComponent(
-            imageUrl: item.imageUrl,
-            text: item.header,
-            optionTitle: item.title,
-            optionSubtitle: item.subtitle,
-            optionDesc: item.desc,
-          ),
-        );
-      } else {
-        list.add(
-          Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: CarouselCardComponent(
-              imageUrl: item.imageUrl,
-              text: item.header,
-              optionTitle: item.title,
-              optionSubtitle: item.subtitle,
-              optionDesc: item.desc,
-            ),
-          ),
-        );
-      }
-    }
-
-    return list;
   }
 }
 
