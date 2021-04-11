@@ -1,5 +1,7 @@
 # screener
 - This is a sample application.
+- Uses MVVM pattern
+- Tries to encourage the use of boundaries (by using the concept of packages) 
 
 ### Getting Started 🎯🎯
 
@@ -118,3 +120,6 @@ shared/services/xyz.service.dart
 ### Data
 - Sample data files are put inside the assets
 - When needed they are fetched within the app.
+
+### Testing 🧐🧐
+- Uses golden tests `https://pub.dev/packages/golden_toolkit`
