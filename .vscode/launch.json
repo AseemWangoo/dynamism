@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dynamism",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "app_theme",
+            "cwd": "packages/app_theme",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "shared_components",
+            "cwd": "packages/shared_components",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Golden",
+            "request": "launch",
+            "type": "dart",
+            "codeLens": {
+                "for": [
+                    "run-test",
+                    "run-test-file"
+                ]
+            },
+            "args": [
+                "--update-goldens"
+            ]
+        }
+    ]
+}

@@ -24,6 +24,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # CAROUSEL SLIDER
+  carousel_slider: ^2.2.1
+
   # DI
   get_it: ^5.0.2
 
@@ -35,9 +38,6 @@ dependencies:
 
   # WEBVIEW
   webview_flutter: ^1.0.1
-
-  # CAROUSEL SLIDER
-  carousel_slider: ^2.2.1
 
   # INTERNAL PACKAGES
   shared_components:
