@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:screener/shared/styles/colors.dart';
+
+import 'package:app_theme/app_theme.dart' show AppColors;
 
 class DotIndicatorComponent extends StatelessWidget {
   const DotIndicatorComponent({

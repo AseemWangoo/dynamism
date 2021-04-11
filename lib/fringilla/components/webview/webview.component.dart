@@ -1,7 +1,9 @@
 import 'dart:async' show Completer;
 
 import 'package:flutter/material.dart';
-import 'package:screener/shared/styles/colors.dart';
+
+import 'package:app_theme/app_theme.dart' show AppColors;
+
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewComponent extends StatefulWidget {

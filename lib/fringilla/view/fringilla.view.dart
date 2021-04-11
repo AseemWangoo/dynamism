@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:shared_components/shared_components.dart';
+
 import 'package:screener/fringilla/components/button/button.component.dart';
 import 'package:screener/fringilla/components/card/card.component.dart';
 import 'package:screener/fringilla/components/webview/webview.component.dart';
 import 'package:screener/fringilla/utils/strings.dart';
 import 'package:screener/fringilla/view_models/fringilla.viewmodel.dart';
-import 'package:screener/shared/components/loading/loading.component.dart';
 import 'package:screener/shared/components/notifier/notifier.component.dart';
 
-import 'package:screener/shared/components/scaffold/custom.scaffold.dart';
-import 'package:screener/shared/components/spacers/spacer.component.dart';
-import 'package:screener/shared/components/text/h3_text.component.dart';
 import 'package:screener/shared/services/navigation.service.dart';
 
 import '../../locator.dart';

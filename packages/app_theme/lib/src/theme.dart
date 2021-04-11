@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:screener/shared/styles/colors.dart';
-import 'package:screener/shared/styles/text_styles.dart';
+
+import 'colors.dart';
+import 'text_styles.dart';
 
 class AppTheme {
   AppTheme._();

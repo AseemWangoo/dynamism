@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:screener/shared/components/image/image_cacher.component.dart';
-import 'package:screener/shared/components/spacers/spacer.component.dart';
-import 'package:screener/shared/components/text/h3_text.component.dart';
-import 'package:screener/shared/styles/colors.dart';
-import 'package:screener/shared/styles/text_styles.dart';
+import 'package:shared_components/shared_components.dart';
+
+import 'package:app_theme/app_theme.dart';
 
 class CarouselCardComponent extends ImageCacherComponent {
   const CarouselCardComponent({

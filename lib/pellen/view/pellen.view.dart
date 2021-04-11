@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:shared_components/shared_components.dart';
+
 import 'package:screener/pellen/utils/strings.dart';
 import 'package:screener/pellen/view_models/pellen.viewmodel.dart';
-import 'package:screener/shared/components/image/image.component.dart';
-
-import 'package:screener/shared/components/scaffold/custom.scaffold.dart';
-import 'package:screener/shared/components/spacers/column_spacer.component.dart';
-import 'package:screener/shared/components/spacers/spacer.component.dart';
-import 'package:screener/shared/components/text/h3_text.component.dart';
 
 import '../components/row_with_number/numbered_row.component.dart';
 

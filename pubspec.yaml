@@ -3,7 +3,7 @@ description: Sample Flutter Project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -25,7 +25,7 @@ dependencies:
     sdk: flutter
 
   # DI
-  get_it: ^5.0.2  
+  get_it: ^5.0.2
 
   # HTTP
   http: ^0.12.2
@@ -36,18 +36,22 @@ dependencies:
   # WEBVIEW
   webview_flutter: ^1.0.1
 
-  # CACHING
-  cached_network_image: ^2.2.0+1
-
   # CAROUSEL SLIDER
   carousel_slider: ^2.2.1
+
+  # INTERNAL PACKAGES
+  shared_components:
+    path: packages/shared_components
+
+  app_theme:
+    path: packages/app_theme
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
-  # LINTER  
-  lint: ^1.2.0  
+
+  # LINTER
+  lint: ^1.2.0
 
 flutter:
   uses-material-design: true
@@ -57,7 +61,7 @@ flutter:
     - assets/images/
     - assets/images/2.0x/
     - assets/images/3.0x/
-    
+
   fonts:
     - family: Roboto
       fonts:
@@ -66,7 +70,6 @@ flutter:
         - asset: assets/fonts/Roboto-Regular.ttf
           weight: 400
         - asset: assets/fonts/Roboto-Medium.ttf
-          weight: 500    
+          weight: 500
         - asset: assets/fonts/Roboto-Bold.ttf
-          weight: 700  
-           
+          weight: 700
