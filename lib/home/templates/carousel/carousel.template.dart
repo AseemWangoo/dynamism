@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/material.dart';
+import 'package:shared_components/shared_components.dart';
 
 import 'package:provider/provider.dart';
 
@@ -11,9 +12,6 @@ import 'package:screener/home/model/carousel.model.dart';
 import 'package:screener/home/utils/strings.dart';
 
 import 'package:screener/home/view_models/home.viewmodel.dart';
-import 'package:screener/shared/components/spacers/column_spacer.component.dart';
-import 'package:screener/shared/components/spacers/spacer.component.dart';
-import 'package:screener/shared/components/text/h3_text.component.dart';
 
 class CarouselTemplate extends StatefulWidget {
   const CarouselTemplate({Key key}) : super(key: key);

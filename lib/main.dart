@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'package:app_theme/app_theme.dart' show AppTheme;
+
 import 'package:screener/fringilla/view_models/fringilla.viewmodel.dart';
 import 'package:screener/pellen/view_models/pellen.viewmodel.dart';
-import 'package:screener/shared/styles/theme.dart';
 
 import 'home/view_models/home.viewmodel.dart';
 import 'locator.dart';

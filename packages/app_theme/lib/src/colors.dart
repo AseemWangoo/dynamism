@@ -1,6 +1,6 @@
 import 'package:flutter/rendering.dart' show Color;
 
-import 'package:screener/shared/extensions/color.dart';
+import '../src/extensions/color.dart';
 
 class AppColors {
   AppColors._();

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:screener/pellen/components/text/caption_text.component.dart';
-import 'package:screener/shared/components/spacers/spacer.component.dart';
-import 'package:screener/shared/styles/colors.dart';
+
+import 'package:app_theme/app_theme.dart' show AppColors;
+
+import 'package:shared_components/shared_components.dart' show SpacerHorizontal;
 
 class NumberedRowComponent extends CaptionTextComponent {
   const NumberedRowComponent({

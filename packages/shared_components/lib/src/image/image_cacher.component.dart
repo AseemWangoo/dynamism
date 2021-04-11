@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 
+import 'package:app_theme/app_theme.dart' show AppColors;
+
 import 'package:flutter/material.dart';
-import 'package:screener/shared/styles/colors.dart';
 
 class ImageCacherComponent extends StatelessWidget {
   const ImageCacherComponent({

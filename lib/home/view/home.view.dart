@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 
+import 'package:shared_components/shared_components.dart';
+
 import 'package:screener/home/components/list/list.component.dart';
 import 'package:screener/home/templates/carousel/carousel.template.dart';
 import 'package:screener/home/utils/strings.dart';
 import 'package:screener/home/view_models/home.viewmodel.dart';
 import 'package:screener/locator.dart';
 import 'package:screener/shared/assets/image.assets.dart';
-import 'package:screener/shared/components/image/image.component.dart';
-import 'package:screener/shared/components/loading/loading.component.dart';
 import 'package:screener/shared/components/notifier/notifier.component.dart';
-import 'package:screener/shared/components/scaffold/custom.scaffold.dart';
-import 'package:screener/shared/components/spacers/column_spacer.component.dart';
-import 'package:screener/shared/components/spacers/spacer.component.dart';
-import 'package:screener/shared/components/text/h3_text.component.dart';
 import 'package:screener/shared/routes/routes.dart';
 import 'package:screener/shared/services/navigation.service.dart';
-import 'package:screener/shared/styles/colors.dart';
+
+import 'package:app_theme/app_theme.dart' show AppColors;
 
 class HomeView extends StatelessWidget {
   const HomeView({Key key}) : super(key: key);
