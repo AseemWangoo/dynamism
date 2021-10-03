@@ -1,7 +1,7 @@
 # This is a generated file; do not edit or check into version control.
-path_provider=/Users/aseemwangoo/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.1/
-path_provider_linux=/Users/aseemwangoo/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.0.0/
-path_provider_macos=/Users/aseemwangoo/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.0/
-path_provider_windows=/Users/aseemwangoo/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.0/
-sqflite=/Users/aseemwangoo/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+3/
-webview_flutter=/Users/aseemwangoo/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-1.0.7/
+path_provider=/Users/aseemwangoo/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.4/
+path_provider_linux=/Users/aseemwangoo/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.0/
+path_provider_macos=/Users/aseemwangoo/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.2/
+path_provider_windows=/Users/aseemwangoo/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.3/
+sqflite=/Users/aseemwangoo/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+4/
+webview_flutter=/Users/aseemwangoo/.pub-cache/hosted/pub.dartlang.org/webview_flutter-1.0.7/
