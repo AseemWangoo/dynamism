@@ -123,3 +123,10 @@ shared/services/xyz.service.dart
 
 ### Testing 🧐🧐
 - Uses golden tests `https://pub.dev/packages/golden_toolkit`
+- Integration tests
+
+```
+flutter drive \
+--driver=test_driver/integration_test.dart \
+--target=integration_test/app_test.dart
+```
