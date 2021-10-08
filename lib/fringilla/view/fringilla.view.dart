@@ -71,6 +71,7 @@ class _Items extends StatelessWidget {
       itemCount: model.items.length,
       itemBuilder: (_, int i) {
         return Padding(
+          key: Key('fringilla_item_$i'),
           padding: const EdgeInsets.only(bottom: 16),
           child: CardComponent(
             onPressed: () {

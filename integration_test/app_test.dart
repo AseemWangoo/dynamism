@@ -18,19 +18,16 @@ void main() {
   group('e2e test', () {
     testWidgets('whole app', (WidgetTester tester) async {
       app.main();
+
       homeRobot = HomeRobot(tester);
       secondScreenRobot = SecondScreenRobot(tester);
       thirdScreenRobot = ThirdScreenRobot(tester);
 
-      // await tester.scrollUntilVisible(
-      //   itemFinder,
-      //   -450,
-      // );
-      // await tester.pump();
-
       // For recording perf
+      // await tester.pumpAndSettle();
+      // final listFinder = find.byKey(const Key('singleChildScrollView'));
       // await binding.watchPerformance(() async {
-      //   await tester.fling(listFinder, Offset(0, -500), 10000);
+      //   await tester.fling(listFinder, const Offset(0, -500), 10000);
       //   await tester.pumpAndSettle();
       // });
       await homeRobot.findTitle();
@@ -47,6 +44,7 @@ void main() {
       await thirdScreenRobot.findTitle();
       await thirdScreenRobot.scrollThePage();
       await thirdScreenRobot.scrollThePage(scrollUp: true);
+      await thirdScreenRobot.clickTile(2);
       await thirdScreenRobot.goBack();
 
       await homeRobot.scrollThePage(scrollUp: true);
