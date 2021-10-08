@@ -27,6 +27,7 @@ class FringillaView extends StatelessWidget {
 
         return CustomScaffold(
           child: SingleChildScrollView(
+            key: const Key('fringilla singleChildScrollView'),
             padding: const EdgeInsets.only(top: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

@@ -26,6 +26,7 @@ class CustomScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor: AppColors.bg),
       backgroundColor: AppColors.bg,
       body: SafeArea(child: _checkGutter),
     );

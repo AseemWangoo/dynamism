@@ -28,6 +28,7 @@ class HomeView extends StatelessWidget {
         return CustomScaffold(
           enableGutter: false,
           child: SingleChildScrollView(
+            key: const Key('singleChildScrollView'),
             padding: const EdgeInsets.only(top: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,6 +45,7 @@ class HomeView extends StatelessWidget {
                 ),
                 SpacerVertical(64),
                 Padding(
+                  key: Key('desiredContainer'),
                   padding: EdgeInsets.symmetric(horizontal: 24),
                   child: _Bottom(),
                 ),
@@ -122,12 +124,14 @@ class _Bottom extends StatelessWidget {
           style: Theme.of(context).textTheme.caption,
         ),
         ListComponent(
+          key: const Key(HomeStrings.bOp1),
           onPressed: () {
             navService.nav.pushNamed(NamedRoute.pellen);
           },
           text: HomeStrings.bOp1,
         ),
         ListComponent(
+          key: const Key(HomeStrings.bOp2),
           onPressed: () {
             navService.nav.pushNamed(NamedRoute.fringilla);
           },

@@ -15,6 +15,7 @@ class PellenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       child: SingleChildScrollView(
+        key: const Key('pellen singleChildScrollView'),
         padding: const EdgeInsets.only(top: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
