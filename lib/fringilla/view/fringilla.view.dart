@@ -27,6 +27,7 @@ class FringillaView extends StatelessWidget {
 
         return CustomScaffold(
           child: SingleChildScrollView(
+            key: const Key('fringilla singleChildScrollView'),
             padding: const EdgeInsets.only(top: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,6 +71,7 @@ class _Items extends StatelessWidget {
       itemCount: model.items.length,
       itemBuilder: (_, int i) {
         return Padding(
+          key: Key('fringilla_item_$i'),
           padding: const EdgeInsets.only(bottom: 16),
           child: CardComponent(
             onPressed: () {

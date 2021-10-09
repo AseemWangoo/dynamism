@@ -53,6 +53,9 @@ dev_dependencies:
   # LINTER
   lint: ^1.2.0
 
+  integration_test:
+    sdk: flutter
+
 flutter:
   uses-material-design: true
 
