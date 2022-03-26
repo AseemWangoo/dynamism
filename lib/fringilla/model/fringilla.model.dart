@@ -7,7 +7,7 @@ String fringillaModelToJson(FringillaModel data) => json.encode(data.toJson());
 
 class FringillaModel {
   FringillaModel({
-    this.items,
+    this.items = const [],
   });
 
   List<Item> items;

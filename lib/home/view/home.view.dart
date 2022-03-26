@@ -1,25 +1,39 @@
+import 'package:app_theme/app_theme.dart' show AppColors;
 import 'package:flutter/material.dart';
-
-import 'package:shared_components/shared_components.dart';
-
+import 'package:provider/provider.dart';
 import 'package:screener/home/components/list/list.component.dart';
 import 'package:screener/home/templates/carousel/carousel.template.dart';
 import 'package:screener/home/utils/strings.dart';
 import 'package:screener/home/view_models/home.viewmodel.dart';
 import 'package:screener/locator.dart';
 import 'package:screener/shared/assets/image.assets.dart';
-import 'package:screener/shared/components/notifier/notifier.component.dart';
 import 'package:screener/shared/routes/routes.dart';
 import 'package:screener/shared/services/navigation.service.dart';
+import 'package:shared_components/shared_components.dart';
 
-import 'package:app_theme/app_theme.dart' show AppColors;
-
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({Key key}) : super(key: key);
 
   @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  HomeViewModel viewModel;
+
+  @override
+  void initState() {
+    viewModel = Provider.of<HomeViewModel>(context, listen: false);
+
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      viewModel.fetchData();
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return NotifierWidget<HomeViewModel>(
+    return Consumer<HomeViewModel>(
       builder: (_, model, child) {
         if (model.isLoading) {
           return child;
@@ -55,7 +69,6 @@ class HomeView extends StatelessWidget {
           ),
         );
       },
-      model: locator<HomeViewModel>(),
       child: LoadingComponent(),
     );
   }

@@ -1,9 +1,10 @@
+import 'package:app_theme/app_theme.dart' show AppTheme;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'package:app_theme/app_theme.dart' show AppTheme;
-
+import 'package:screener/fringilla/repository/fringilla_repo.dart';
 import 'package:screener/fringilla/view_models/fringilla.viewmodel.dart';
+import 'package:screener/home/repository/home_repo.dart';
+import 'package:screener/pellen/repository/pellen_repo.dart';
 import 'package:screener/pellen/view_models/pellen.viewmodel.dart';
 
 import 'home/view_models/home.viewmodel.dart';
@@ -17,16 +18,18 @@ Future<void> main() async {
   // INIT SERVICE LOCATOR
   setupLocator();
 
-  // CALL INIT APIS
-  final homeViewModel = locator<HomeViewModel>();
-  await homeViewModel.fetchData();
-
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => homeViewModel),
-        ChangeNotifierProvider.value(value: PellenViewModel()),
-        ChangeNotifierProvider(create: (_) => FringillaViewModel()),
+        ChangeNotifierProvider(
+          create: (_) => HomeViewModel(repo: locator<HomeRepo>()),
+        ),
+        ChangeNotifierProvider.value(
+          value: PellenViewModel(repo: locator<PellenRepo>()),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => FringillaViewModel(repo: locator<FringillaRepo>()),
+        ),
       ],
       child: MainApp(),
     ),
