@@ -7,7 +7,7 @@ String carouselModelToJson(CarouselModel data) => json.encode(data.toJson());
 
 class CarouselModel {
   CarouselModel({
-    this.items,
+    this.items = const [],
   });
 
   List<Item> items;

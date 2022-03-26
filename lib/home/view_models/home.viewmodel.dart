@@ -1,19 +1,17 @@
-import 'package:flutter/foundation.dart' show debugPrint;
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/foundation.dart';
 
 import 'package:screener/home/model/carousel.model.dart';
+import 'package:screener/home/repository/home_repo.dart';
 
 import 'package:screener/shared/view_models/loading.viewmodel.dart';
 
-abstract class HomeVM extends LoadingViewModel {
-  CarouselModel get homeModel;
-  Future<void> fetchData();
-}
+class HomeViewModel extends LoadingViewModel {
+  HomeViewModel({
+    @required this.repo,
+  }) : assert(repo != null);
 
-class HomeViewModel extends HomeVM {
-  HomeViewModel();
+  final HomeRepo repo;
 
-  @override
   CarouselModel get homeModel => _homeModel;
 
   set homeModel(CarouselModel homeModel) {
@@ -21,13 +19,11 @@ class HomeViewModel extends HomeVM {
     notifyListeners();
   }
 
-  @override
   Future<void> fetchData() async {
     try {
       isLoading = true;
 
-      final resp = await rootBundle.loadString('assets/data/first_screen.json');
-      _homeModel = carouselModelFromJson(resp);
+      _homeModel = await repo.fetchData();
     } catch (exc) {
       debugPrint('Error in _fetchData : ${exc.toString()}');
     }
