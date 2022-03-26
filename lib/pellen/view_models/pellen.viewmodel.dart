@@ -1,43 +1,22 @@
 import 'package:flutter/material.dart';
 
 import 'package:screener/pellen/model/pellen.model.dart';
-import 'package:screener/pellen/utils/strings.dart';
-import 'package:screener/shared/assets/image.assets.dart';
+import 'package:screener/pellen/repository/pellen_repo.dart';
 
-abstract class PellenVM extends ChangeNotifier {
-  List<PellenModel> topSection();
-  List<PellenModel> bottomSection();
-}
+class PellenViewModel extends ChangeNotifier {
+  PellenViewModel({
+    @required this.repo,
+  }) : assert(repo != null);
 
-class PellenViewModel extends PellenVM {
-  @override
+  final PellenRepo repo;
+
   List<PellenModel> topSection() {
-    final list = <PellenModel>[
-      PellenModel(
-        [PellenStrings.topPt1, PellenStrings.topPt2, PellenStrings.topPt3],
-        ImageAssets.img300.assetName,
-      ),
-    ];
-
+    final list = repo.topSection();
     return list;
   }
 
-  @override
   List<PellenModel> bottomSection() {
-    final list = <PellenModel>[
-      PellenModel(
-        [
-          PellenStrings.btmPt1,
-          PellenStrings.btmPt2,
-          PellenStrings.btmPt3,
-          PellenStrings.btmPt4,
-          PellenStrings.btmPt5,
-          PellenStrings.btmPt6,
-          PellenStrings.btmPt7,
-        ],
-        ImageAssets.img300.assetName,
-      ),
-    ];
+    final list = repo.bottomSection();
 
     return list;
   }

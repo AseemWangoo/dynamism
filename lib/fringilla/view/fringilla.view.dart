@@ -1,25 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'package:shared_components/shared_components.dart';
-
 import 'package:screener/fringilla/components/button/button.component.dart';
 import 'package:screener/fringilla/components/card/card.component.dart';
 import 'package:screener/fringilla/components/webview/webview.component.dart';
 import 'package:screener/fringilla/utils/strings.dart';
 import 'package:screener/fringilla/view_models/fringilla.viewmodel.dart';
-import 'package:screener/shared/components/notifier/notifier.component.dart';
-
 import 'package:screener/shared/services/navigation.service.dart';
+import 'package:shared_components/shared_components.dart';
 
 import '../../locator.dart';
 
-class FringillaView extends StatelessWidget {
+class FringillaView extends StatefulWidget {
   const FringillaView({Key key}) : super(key: key);
 
   @override
+  State<FringillaView> createState() => _FringillaViewState();
+}
+
+class _FringillaViewState extends State<FringillaView> {
+  FringillaViewModel viewModel;
+
+  @override
+  void initState() {
+    super.initState();
+    viewModel = Provider.of<FringillaViewModel>(context, listen: false);
+
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      viewModel.fetchData();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return NotifierWidget<FringillaViewModel>(
+    return Consumer<FringillaViewModel>(
       builder: (_, model, child) {
         if (model.isLoading) {
           return child;
@@ -52,7 +65,6 @@ class FringillaView extends StatelessWidget {
           ),
         );
       },
-      model: FringillaViewModel()..fetchData(),
       child: LoadingComponent(),
     );
   }

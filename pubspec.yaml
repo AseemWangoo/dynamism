@@ -39,6 +39,9 @@ dependencies:
   # WEBVIEW
   webview_flutter: ^1.0.1
 
+  # TESTING
+  mockito: ^5.1.0
+
   # INTERNAL PACKAGES
   shared_components:
     path: packages/shared_components
