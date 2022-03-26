@@ -5,8 +5,8 @@ import 'package:screener/pellen/repository/pellen_repo.dart';
 
 class PellenViewModel extends ChangeNotifier {
   PellenViewModel({
-    @required this.repo,
-  }) : assert(repo != null);
+    required this.repo,
+  });
 
   final PellenRepo repo;
 

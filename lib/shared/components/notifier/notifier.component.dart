@@ -4,17 +4,17 @@ import 'package:provider/provider.dart';
 
 class NotifierWidget<T extends ChangeNotifier> extends StatefulWidget {
   const NotifierWidget({
-    Key key,
-    @required this.builder,
-    @required this.model,
+    Key? key,
+    required this.builder,
+    required this.model,
     this.child,
   }) : super(key: key);
 
   final T model;
 
-  final Widget child;
+  final Widget? child;
 
-  final Widget Function(BuildContext context, T model, Widget child) builder;
+  final Widget Function(BuildContext context, T model, Widget? child) builder;
 
   @override
   _NotifierWidgetState<T> createState() => _NotifierWidgetState<T>();
@@ -22,7 +22,7 @@ class NotifierWidget<T extends ChangeNotifier> extends StatefulWidget {
 
 class _NotifierWidgetState<T extends ChangeNotifier>
     extends State<NotifierWidget<T>> {
-  T model;
+  late T model;
 
   @override
   void initState() {

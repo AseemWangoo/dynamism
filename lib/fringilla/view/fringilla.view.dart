@@ -11,14 +11,14 @@ import 'package:shared_components/shared_components.dart';
 import '../../locator.dart';
 
 class FringillaView extends StatefulWidget {
-  const FringillaView({Key key}) : super(key: key);
+  const FringillaView({Key? key}) : super(key: key);
 
   @override
   State<FringillaView> createState() => _FringillaViewState();
 }
 
 class _FringillaViewState extends State<FringillaView> {
-  FringillaViewModel viewModel;
+  late FringillaViewModel viewModel;
 
   @override
   void initState() {
@@ -35,7 +35,7 @@ class _FringillaViewState extends State<FringillaView> {
     return Consumer<FringillaViewModel>(
       builder: (_, model, child) {
         if (model.isLoading) {
-          return child;
+          return child ?? const SizedBox();
         }
 
         return CustomScaffold(
@@ -71,7 +71,7 @@ class _FringillaViewState extends State<FringillaView> {
 }
 
 class _Items extends StatelessWidget {
-  const _Items({Key key}) : super(key: key);
+  const _Items({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -88,10 +88,10 @@ class _Items extends StatelessWidget {
           child: CardComponent(
             onPressed: () {
               navService.nav.push(MaterialPageRoute(
-                builder: (_) => WebViewComponent(url: model.items[i].urlLink),
+                builder: (_) => WebViewComponent(url: model.items[i].urlLink!),
               ));
             },
-            text: model.items[i].description,
+            text: model.items[i].description!,
           ),
         );
       },

@@ -6,11 +6,10 @@ typedef CardPressed = void Function();
 
 class ListComponent extends StatelessWidget {
   const ListComponent({
-    Key key,
-    @required this.onPressed,
+    Key? key,
+    required this.onPressed,
     this.text = 'Some text',
-  })  : assert(onPressed != null),
-        super(key: key);
+  }) : super(key: key);
 
   final String text;
   final CardPressed onPressed;

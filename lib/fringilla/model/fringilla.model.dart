@@ -29,10 +29,10 @@ class Item {
     this.urlLink,
   });
 
-  String id;
-  String index;
-  String description;
-  String urlLink;
+  String? id;
+  String? index;
+  String? description;
+  String? urlLink;
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
         id: json["id"],

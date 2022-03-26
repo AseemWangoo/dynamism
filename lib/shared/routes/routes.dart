@@ -37,8 +37,8 @@ class AppRoutes {
 }
 
 class _UndefinedView extends StatelessWidget {
-  const _UndefinedView({Key key, this.name}) : super(key: key);
-  final String name;
+  const _UndefinedView({Key? key, this.name}) : super(key: key);
+  final String? name;
 
   @override
   Widget build(BuildContext context) {

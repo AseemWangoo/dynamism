@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class H3TextComponent extends StatelessWidget {
-  const H3TextComponent({Key key, this.text = 'Some text'}) : super(key: key);
+  const H3TextComponent({Key? key, this.text = 'Some text'}) : super(key: key);
 
   final String text;
 

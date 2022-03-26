@@ -5,5 +5,5 @@ class NavigationService {
 
   GlobalKey<NavigatorState> rootNavKey = GlobalKey();
 
-  NavigatorState get nav => rootNavKey.currentState;
+  NavigatorState get nav => rootNavKey.currentState!;
 }

@@ -14,7 +14,7 @@ import 'package:screener/home/utils/strings.dart';
 import 'package:screener/home/view_models/home.viewmodel.dart';
 
 class CarouselTemplate extends StatefulWidget {
-  const CarouselTemplate({Key key}) : super(key: key);
+  const CarouselTemplate({Key? key}) : super(key: key);
 
   @override
   _CarouselTemplateState createState() => _CarouselTemplateState();
@@ -77,11 +77,11 @@ class _CarouselTemplateState extends State<CarouselTemplate> {
       if (i == model.items.length - 1) {
         list.add(
           CarouselCardComponent(
-            imageUrl: item.imageUrl,
-            text: item.header,
-            optionTitle: item.title,
-            optionSubtitle: item.subtitle,
-            optionDesc: item.desc,
+            imageUrl: item.imageUrl!,
+            text: item.header!,
+            optionTitle: item.title!,
+            optionSubtitle: item.subtitle!,
+            optionDesc: item.desc!,
           ),
         );
       } else {
@@ -89,11 +89,11 @@ class _CarouselTemplateState extends State<CarouselTemplate> {
           Padding(
             padding: const EdgeInsets.only(right: 12),
             child: CarouselCardComponent(
-              imageUrl: item.imageUrl,
-              text: item.header,
-              optionTitle: item.title,
-              optionSubtitle: item.subtitle,
-              optionDesc: item.desc,
+              imageUrl: item.imageUrl!,
+              text: item.header!,
+              optionTitle: item.title!,
+              optionSubtitle: item.subtitle!,
+              optionDesc: item.desc!,
             ),
           ),
         );

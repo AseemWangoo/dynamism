@@ -8,7 +8,7 @@ import 'package:shared_components/shared_components.dart' show SpacerHorizontal;
 
 class NumberedRowComponent extends CaptionTextComponent {
   const NumberedRowComponent({
-    Key key,
+    Key? key,
     String text = 'Some text',
     this.number = 1,
   }) : super(text: text, key: key);
@@ -23,7 +23,7 @@ class NumberedRowComponent extends CaptionTextComponent {
           '$number.',
           style: Theme.of(context)
               .textTheme
-              .caption
+              .caption!
               .copyWith(color: AppColors.textGrey),
         ),
         const SpacerHorizontal(12),

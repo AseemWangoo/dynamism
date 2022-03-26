@@ -6,8 +6,8 @@ typedef CardPressed = void Function();
 
 class CardComponent extends StatelessWidget {
   const CardComponent({
-    Key key,
-    @required this.onPressed,
+    Key? key,
+    required this.onPressed,
     this.text = 'Some text',
   }) : super(key: key);
 

@@ -12,14 +12,14 @@ import 'package:screener/shared/services/navigation.service.dart';
 import 'package:shared_components/shared_components.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({Key key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   State<HomeView> createState() => _HomeViewState();
 }
 
 class _HomeViewState extends State<HomeView> {
-  HomeViewModel viewModel;
+  late HomeViewModel viewModel;
 
   @override
   void initState() {
@@ -36,7 +36,7 @@ class _HomeViewState extends State<HomeView> {
     return Consumer<HomeViewModel>(
       builder: (_, model, child) {
         if (model.isLoading) {
-          return child;
+          return child ?? const SizedBox();
         }
 
         return CustomScaffold(
@@ -75,7 +75,7 @@ class _HomeViewState extends State<HomeView> {
 }
 
 class _Intro extends StatelessWidget {
-  const _Intro({Key key}) : super(key: key);
+  const _Intro({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +90,7 @@ class _Intro extends StatelessWidget {
           HomeStrings.nam,
           style: Theme.of(context)
               .textTheme
-              .caption
+              .caption!
               .copyWith(color: AppColors.textGrey),
         ),
         const SpacerVertical(8),
@@ -118,7 +118,7 @@ class _Intro extends StatelessWidget {
 }
 
 class _Bottom extends StatelessWidget {
-  const _Bottom({Key key}) : super(key: key);
+  const _Bottom({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

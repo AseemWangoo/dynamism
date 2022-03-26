@@ -5,15 +5,14 @@ version: 0.0.1
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.15.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   # CACHING
-  cached_network_image: ^2.2.0+1
+  cached_network_image: ^3.2.0
 
   # INTERNAL PACKAGES
   app_theme:

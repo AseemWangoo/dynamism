@@ -31,12 +31,12 @@ class Item {
     this.imageUrl,
   });
 
-  String id;
-  String header;
-  String title;
-  String subtitle;
-  String desc;
-  String imageUrl;
+  String? id;
+  String? header;
+  String? title;
+  String? subtitle;
+  String? desc;
+  String? imageUrl;
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
         id: json["id"],

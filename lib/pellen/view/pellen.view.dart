@@ -9,7 +9,7 @@ import 'package:screener/pellen/view_models/pellen.viewmodel.dart';
 import '../components/row_with_number/numbered_row.component.dart';
 
 class PellenView extends StatelessWidget {
-  const PellenView({Key key}) : super(key: key);
+  const PellenView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class PellenView extends StatelessWidget {
 }
 
 class _SectionOne extends StatelessWidget {
-  const _SectionOne({Key key}) : super(key: key);
+  const _SectionOne({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,7 @@ class _SectionOne extends StatelessWidget {
 }
 
 class _SectionTwo extends StatelessWidget {
-  const _SectionTwo({Key key}) : super(key: key);
+  const _SectionTwo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

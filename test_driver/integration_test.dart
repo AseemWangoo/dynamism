@@ -6,17 +6,23 @@ import 'package:path/path.dart' as path;
 import 'package:flutter_driver/flutter_driver.dart';
 
 Future<void> main() async {
-  integrationDriver(responseDataCallback: (Map<String, dynamic> data) async {
-    await fs.directory(_destinationDirectory).create(recursive: true);
+  integrationDriver(
+    responseDataCallback: (Map<String, dynamic>? data) async {
+      await fs.directory(_destinationDirectory).create(recursive: true);
 
-    final file = fs.file(path.join(
-      _destinationDirectory,
-      '$_testOutputFilename.json',
-    ));
+      final file = fs.file(
+        path.join(
+          _destinationDirectory,
+          '$_testOutputFilename.json',
+        ),
+      );
 
-    final resultString = _encodeJson(data);
-    await file.writeAsString(resultString);
-  });
+      if (data != null) {
+        final resultString = _encodeJson(data);
+        await file.writeAsString(resultString);
+      }
+    },
+  );
 }
 
 String _encodeJson(Map<String, dynamic> jsonObject) {

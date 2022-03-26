@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CaptionTextComponent extends StatelessWidget {
-  const CaptionTextComponent({Key key, this.text = 'Some text'})
+  const CaptionTextComponent({Key? key, this.text = 'Some text'})
       : super(key: key);
 
   final String text;

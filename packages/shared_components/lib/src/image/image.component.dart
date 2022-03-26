@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ImageComponent extends StatelessWidget {
-  const ImageComponent({Key key, @required this.assetName, this.height = 200})
+  const ImageComponent({Key? key, required this.assetName, this.height = 200})
       : super(key: key);
 
   final String assetName;
