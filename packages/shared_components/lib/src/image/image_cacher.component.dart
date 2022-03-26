@@ -6,13 +6,12 @@ import 'package:flutter/material.dart';
 
 class ImageCacherComponent extends StatelessWidget {
   const ImageCacherComponent({
-    Key key,
-    @required this.imageUrl,
+    Key? key,
+    required this.imageUrl,
     this.width = double.maxFinite,
     this.fit = BoxFit.fitWidth,
     this.height = 300,
-  })  : assert(imageUrl != null, 'This should be an image network url.'),
-        super(key: key);
+  }) : super(key: key);
 
   final String imageUrl;
   final double height;
@@ -44,7 +43,7 @@ class ImageCacherComponent extends StatelessWidget {
 }
 
 class _Placeholder extends StatelessWidget {
-  const _Placeholder({Key key}) : super(key: key);
+  const _Placeholder({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

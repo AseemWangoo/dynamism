@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 
 class BootstrapComponent extends StatelessWidget {
   const BootstrapComponent({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.flexFactor = 4,
     this.alignment = Alignment.center,
-  })  : assert(child != null),
-        assert(
+  })  : assert(
           flexFactor >= 1 && flexFactor <= 4,
           'Flex factor should be between 1 and 4',
         ),

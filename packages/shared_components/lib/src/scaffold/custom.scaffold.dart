@@ -4,8 +4,8 @@ import 'package:app_theme/app_theme.dart' show AppColors;
 
 class CustomScaffold extends StatelessWidget {
   const CustomScaffold({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.enableGutter = true,
   }) : super(key: key);
 

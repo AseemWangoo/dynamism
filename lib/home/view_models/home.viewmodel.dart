@@ -7,8 +7,8 @@ import 'package:screener/shared/view_models/loading.viewmodel.dart';
 
 class HomeViewModel extends LoadingViewModel {
   HomeViewModel({
-    @required this.repo,
-  }) : assert(repo != null);
+    required this.repo,
+  });
 
   final HomeRepo repo;
 

@@ -18,26 +18,26 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 0.0.1+1
 
 environment:
-  sdk: ">=2.8.0 <3.0.0"
+  sdk: ">=2.15.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   # CAROUSEL SLIDER
-  carousel_slider: ^2.2.1
+  carousel_slider: ^4.0.0
 
   # DI
-  get_it: ^5.0.2
+  get_it: ^7.2.0
 
   # HTTP
-  http: ^0.12.2
+  http: ^0.13.4
 
   # PROVIDER
-  provider: ^4.3.1
+  provider: ^6.0.2
 
   # WEBVIEW
-  webview_flutter: ^1.0.1
+  webview_flutter: ^3.0.1
 
   # TESTING
   mockito: ^5.1.0
@@ -55,6 +55,8 @@ dev_dependencies:
 
   # LINTER
   lint: ^1.2.0
+
+  build_runner: ^2.1.7
 
   integration_test:
     sdk: flutter

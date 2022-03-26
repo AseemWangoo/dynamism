@@ -7,7 +7,7 @@ import 'package:app_theme/app_theme.dart' show AppColors;
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewComponent extends StatefulWidget {
-  const WebViewComponent({Key key, @required this.url}) : super(key: key);
+  const WebViewComponent({Key? key, required this.url}) : super(key: key);
 
   final String url;
 
@@ -16,7 +16,7 @@ class WebViewComponent extends StatefulWidget {
 }
 
 class _WebViewComponentState extends State<WebViewComponent> {
-  Completer<WebViewController> _controller;
+  late Completer<WebViewController> _controller;
 
   @override
   void initState() {

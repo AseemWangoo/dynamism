@@ -14,8 +14,8 @@ class ColumnSpacer extends StatelessWidget {
   /// ```
   /// {@end-tool}
   const ColumnSpacer({
-    Key key,
-    @required this.children,
+    Key? key,
+    required this.children,
     this.spacerWidget = const SpacerVertical(8),
     this.crossAxisAlignment = CrossAxisAlignment.center,
     this.mainAxisSize = MainAxisSize.min,

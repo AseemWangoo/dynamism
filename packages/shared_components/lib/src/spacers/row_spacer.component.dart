@@ -14,8 +14,8 @@ class RowSpacer extends StatelessWidget {
   /// ```
   /// {@end-tool}
   const RowSpacer({
-    Key key,
-    @required this.children,
+    Key? key,
+    required this.children,
     this.spacerWidget = const SpacerHorizontal(8),
     this.crossAxisAlignment = CrossAxisAlignment.center,
     this.mainAxisSize = MainAxisSize.min,

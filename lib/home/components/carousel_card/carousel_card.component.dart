@@ -6,8 +6,8 @@ import 'package:app_theme/app_theme.dart';
 
 class CarouselCardComponent extends ImageCacherComponent {
   const CarouselCardComponent({
-    Key key,
-    @required String imageUrl,
+    Key? key,
+    required String imageUrl,
     double height = 300,
     double width = 300,
     this.text = 'Some text',
@@ -54,7 +54,7 @@ class CarouselCardComponent extends ImageCacherComponent {
 
 class _Internal extends StatelessWidget {
   const _Internal({
-    Key key,
+    Key? key,
     this.optionTitle = 'Some title',
     this.optionSubtitle = 'Some sub',
     this.optionDesc = 'Some desc',

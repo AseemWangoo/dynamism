@@ -7,8 +7,8 @@ import 'package:screener/shared/view_models/loading.viewmodel.dart';
 
 class FringillaViewModel extends LoadingViewModel {
   FringillaViewModel({
-    @required this.repo,
-  }) : assert(repo != null);
+    required this.repo,
+  });
 
   final FringillaRepo repo;
 

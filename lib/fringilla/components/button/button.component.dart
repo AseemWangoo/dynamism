@@ -6,11 +6,10 @@ typedef ButtonPressed = void Function();
 
 class ButtonComponent extends StatelessWidget {
   const ButtonComponent({
-    Key key,
-    @required this.onPressed,
+    Key? key,
+    required this.onPressed,
     this.text = 'Lorem Ipsum',
-  })  : assert(onPressed != null),
-        super(key: key);
+  }) : super(key: key);
 
   final ButtonPressed onPressed;
   final String text;

@@ -4,7 +4,7 @@ import 'package:app_theme/app_theme.dart' show AppColors;
 
 class DotIndicatorComponent extends StatelessWidget {
   const DotIndicatorComponent({
-    Key key,
+    Key? key,
     this.isSelected = false,
   }) : super(key: key);
 
