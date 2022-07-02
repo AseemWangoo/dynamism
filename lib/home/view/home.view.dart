@@ -25,7 +25,7 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     viewModel = Provider.of<HomeViewModel>(context, listen: false);
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       viewModel.fetchData();
     });
     super.initState();

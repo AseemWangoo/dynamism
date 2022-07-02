@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pay/pay.dart';
 import 'package:provider/provider.dart';
-
-import 'package:shared_components/shared_components.dart';
-
+import 'package:screener/pellen/components/row_with_number/numbered_row.component.dart';
 import 'package:screener/pellen/utils/strings.dart';
 import 'package:screener/pellen/view_models/pellen.viewmodel.dart';
-
-import '../components/row_with_number/numbered_row.component.dart';
+import 'package:screener/shared/assets/image.assets.dart';
+import 'package:shared_components/shared_components.dart';
 
 class PellenView extends StatelessWidget {
   const PellenView({Key? key}) : super(key: key);
@@ -30,6 +29,17 @@ class PellenView extends StatelessWidget {
             ),
             const SpacerVertical(28),
             const _SectionOne(),
+            GooglePayButton(
+              paymentConfigurationAsset: JsonAssets.gpayAsset,
+              paymentItems: paymentItems,
+              onPaymentResult: onGooglePayResult,
+              style: GooglePayButtonStyle.white,
+              margin: const EdgeInsets.only(top: 15.0),
+              width: double.maxFinite,
+              loadingIndicator: const Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
             const SpacerVertical(64),
             const _SectionTwo(),
             const SpacerVertical(32),
@@ -37,6 +47,22 @@ class PellenView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  List<PaymentItem> get paymentItems {
+    const _paymentItems = [
+      PaymentItem(
+        label: 'Total',
+        amount: '1.99',
+        status: PaymentItemStatus.final_price,
+      ),
+    ];
+
+    return _paymentItems;
+  }
+
+  void onGooglePayResult(dynamic paymentResult) {
+    debugPrint(paymentResult.toString());
   }
 }
 
@@ -114,6 +140,12 @@ class _SectionTwo extends StatelessWidget {
           },
           itemCount: model.bottomSection().first.text.length,
           shrinkWrap: true,
+        ),
+        const SpacerVertical(20),
+        RawGooglePayButton(
+          onPressed: () {},
+          style: GooglePayButtonStyle.white,
+          type: GooglePayButtonType.plain,
         ),
       ],
     );

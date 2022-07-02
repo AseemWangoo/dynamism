@@ -49,6 +49,8 @@ dependencies:
   app_theme:
     path: packages/app_theme
 
+  pay: ^1.0.10  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -69,6 +71,7 @@ flutter:
     - assets/images/
     - assets/images/2.0x/
     - assets/images/3.0x/
+    - assets/json/
 
   fonts:
     - family: Roboto

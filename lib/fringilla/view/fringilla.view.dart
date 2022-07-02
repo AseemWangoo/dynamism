@@ -25,7 +25,7 @@ class _FringillaViewState extends State<FringillaView> {
     super.initState();
     viewModel = Provider.of<FringillaViewModel>(context, listen: false);
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       viewModel.fetchData();
     });
   }
